@@ -62,6 +62,16 @@ class UserController {
         }
     }
 
+    async refresh_mobile(req, res, next) {
+        try {
+            const {refreshToken} = req.body 
+            const userData = await userService.refresh(refreshToken)
+            return res.json(userData)
+        } catch(e) {
+            next(e)
+        }
+    }
+
     async getUserById(req, res, next) {
         try { 
             const {id} = req.params 

@@ -20,6 +20,7 @@ router.post('/change-like-status', authMiddleware, postController.changeLikeStat
 router.get('/comment/:id', authMiddleware, postController.getComment)
 router.get('/activate/:link', userController.activate)
 router.get('/refresh', userController.refresh)
+router.post('/refresh/mobile', userController.refresh_mobile)
 router.get('/posts', authMiddleware, postController.getPosts)
 router.get('/user/:id', authMiddleware, userController.getUserById)
 router.get('/posts/user/:id', authMiddleware, postController.getUserPosts)
